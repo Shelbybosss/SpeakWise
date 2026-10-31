@@ -1,0 +1,14 @@
+{
+  "name": "speakwise",
+  "version": "3.0.0",
+  "private": true,
+  "description": "Placement speaking coach: practise interviews and group discussions with on-device feedback.",
+  "type": "module",
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test",
+    "icons": "node scripts/make-icons.js",
+    "screenshots": "node scripts/capture-screenshots.js"
+  }
+}

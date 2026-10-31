@@ -1,0 +1,75 @@
+:root {
+  color-scheme: light dark;
+  --space-3xs: 2px; --space-2xs: 4px; --space-xs: 8px; --space-sm: 12px; --space-md: 16px; --space-lg: 24px; --space-xl: 40px; --space-2xl: 64px; --space-3xl: 96px; --space-4xl: 144px;
+  --text-xs: 0.75rem; --text-sm: 0.875rem; --text-md: 1rem; --text-lg: 1.2rem; --text-xl: 1.44rem; --text-2xl: 1.728rem; --text-3xl: 2.074rem; --text-4xl: 2.488rem; --text-5xl: 2.986rem;
+  --text-display-s: 1.44rem; --text-display: 2.074rem; --text-section: 1.44rem; --text-title: 1.2rem; --text-lead: 1.2rem;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1); --ease-in: cubic-bezier(0.7, 0, 0.84, 0); --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-micro: 120ms; --dur-short: 220ms; --dur-long: 420ms;
+  --color-error: oklch(52% 0.19 27); --color-success: oklch(50% 0.12 150);
+  --container: 1120px; --gutter: 24px; --gap-columns: 24px; --section-gap-s: 120px; --section-gap: 144px; --section-gap-l: 176px;
+  --z-base: 1; --z-raised: 10; --z-dropdown: 100; --z-sticky: 200; --z-sticky-nav: 300; --z-modal: 400; --z-toast: 500; --z-tooltip: 600;
+
+  /* Paper and ink: tinted toward the brand teal (hue 190) */
+  --color-paper: oklch(96.8% 0.007 190); --color-paper-2: oklch(99.2% 0.003 190); --color-paper-3: oklch(93.6% 0.011 190);
+  --color-ink: oklch(21% 0.022 195); --color-ink-2: oklch(41% 0.022 195); --color-muted: oklch(55% 0.02 195);
+  --color-rule: oklch(88% 0.012 190); --color-fill: oklch(93% 0.013 190); --color-fill-2: oklch(89.5% 0.016 190);
+  /* Accent: the brand teal, a signal for the primary action, selection and state */
+  --color-accent: oklch(50% 0.092 187); --color-accent-ink: oklch(98.6% 0.008 187); --color-focus: oklch(53% 0.15 187);
+  --color-accent-soft: oklch(92.5% 0.03 187);
+  /* Deep: the brand's dark teal, carrying the app bar, the home panel and the speaking stage */
+  --color-deep: oklch(27.5% 0.046 192); --color-deep-2: oklch(31.5% 0.05 190); --color-deep-3: oklch(37% 0.05 190); --color-deep-rule: oklch(40% 0.045 190);
+  --color-deep-ink: oklch(97.6% 0.012 180); --color-deep-ink-2: oklch(84.5% 0.05 180);
+  --color-signal: oklch(78.5% 0.14 182); --color-signal-ink: oklch(24% 0.045 190); --color-signal-focus: oklch(82% 0.15 182);
+  --color-gold: oklch(82.5% 0.15 72);
+  /* Feedback roles: always paired with an icon or a word, never colour alone */
+  --color-good: oklch(50% 0.13 150); --color-warn: oklch(54% 0.16 45); --color-rec: oklch(52% 0.21 25); --color-rec-ink: oklch(98.5% 0.01 25);
+  --color-rec-on-deep: oklch(72% 0.16 25); --color-rec-on-deep-ink: oklch(23% 0.06 25); --color-rec-clock: oklch(78% 0.13 25);
+  --color-warn-soft: oklch(93% 0.04 60); --color-warn-on-deep: oklch(36% 0.06 60);
+  --color-mark: oklch(90% 0.07 65); --color-mark-ink: oklch(38% 0.1 45); --color-amber-ink: oklch(86% 0.1 72);
+  --color-scrim: oklch(20% 0.04 192 / 0.55); --color-shadow: oklch(20% 0.03 192 / 0.1);
+  --color-option: oklch(99% 0.003 190); --color-option-ink: oklch(21% 0.022 195);
+  --wave-a: var(--color-accent); --wave-b: oklch(60% 0.15 62); --wave-idle: var(--color-fill-2);
+
+  --font-display: "Nunito", ui-rounded, "SF Pro Rounded", system-ui, sans-serif;
+  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI Variable Text", "Segoe UI", system-ui, Roboto, "Noto Sans", "Noto Sans Devanagari", sans-serif;
+  --font-outlier: var(--font-body);
+  --font-code: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --display-weight: 800;
+  --radius-card: 16px; --radius-well: 12px; --radius-input: 10px; --radius-pill: 999px; --rule-hair: 1px;
+  --shadow-card: 0 1px 2px var(--color-shadow);
+  --tracking-display: -0.02em;
+}
+
+[data-mode="dark"] {
+  --color-paper: oklch(15.5% 0.012 195); --color-paper-2: oklch(19.5% 0.014 195); --color-paper-3: oklch(22.5% 0.016 195);
+  --color-ink: oklch(95% 0.008 185); --color-ink-2: oklch(79% 0.02 185); --color-muted: oklch(64% 0.02 190);
+  --color-rule: oklch(30% 0.016 195); --color-fill: oklch(25% 0.016 195); --color-fill-2: oklch(30% 0.018 195);
+  --color-accent: oklch(78% 0.12 183); --color-accent-ink: oklch(22% 0.04 190); --color-focus: oklch(80% 0.14 183);
+  --color-accent-soft: oklch(30% 0.05 187);
+  --color-deep: oklch(23% 0.04 192); --color-deep-2: oklch(26.5% 0.045 190); --color-deep-3: oklch(32% 0.045 190); --color-deep-rule: oklch(36% 0.04 190);
+  --color-good: oklch(78% 0.15 150); --color-warn: oklch(76% 0.14 55); --color-rec: oklch(70% 0.16 25); --color-rec-ink: oklch(22% 0.06 25);
+  --color-warn-soft: oklch(30% 0.05 55);
+  --color-mark: oklch(40% 0.08 55); --color-mark-ink: oklch(91% 0.06 70);
+  --color-shadow: oklch(5% 0.02 192 / 0.4);
+  --wave-a: var(--color-accent); --wave-b: oklch(82% 0.14 75);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-mode]) {
+    --color-paper: oklch(15.5% 0.012 195); --color-paper-2: oklch(19.5% 0.014 195); --color-paper-3: oklch(22.5% 0.016 195);
+    --color-ink: oklch(95% 0.008 185); --color-ink-2: oklch(79% 0.02 185); --color-muted: oklch(64% 0.02 190);
+    --color-rule: oklch(30% 0.016 195); --color-fill: oklch(25% 0.016 195); --color-fill-2: oklch(30% 0.018 195);
+    --color-accent: oklch(78% 0.12 183); --color-accent-ink: oklch(22% 0.04 190); --color-focus: oklch(80% 0.14 183);
+    --color-accent-soft: oklch(30% 0.05 187);
+    --color-deep: oklch(23% 0.04 192); --color-deep-2: oklch(26.5% 0.045 190); --color-deep-3: oklch(32% 0.045 190); --color-deep-rule: oklch(36% 0.04 190);
+    --color-good: oklch(78% 0.15 150); --color-warn: oklch(76% 0.14 55); --color-rec: oklch(70% 0.16 25); --color-rec-ink: oklch(22% 0.06 25);
+    --color-warn-soft: oklch(30% 0.05 55);
+    --color-mark: oklch(40% 0.08 55); --color-mark-ink: oklch(91% 0.06 70);
+    --color-shadow: oklch(5% 0.02 192 / 0.4);
+    --wave-a: var(--color-accent); --wave-b: oklch(82% 0.14 75);
+  }
+}
+
+@media (prefers-contrast: more) {
+  :root { --color-ink-2: oklch(32% 0.022 195); --color-rule: oklch(70% 0.02 190); --color-muted: oklch(45% 0.02 195); }
+}

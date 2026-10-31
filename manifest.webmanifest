@@ -1,0 +1,21 @@
+{
+  "name": "SpeakWise – Placement Speaking Coach",
+  "short_name": "SpeakWise",
+  "description": "Practise placement interviews and group discussions out loud, with on-device feedback.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#F2F2F7",
+  "theme_color": "#0F766E",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" },
+    { "src": "icons/icon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ],
+  "shortcuts": [
+    { "name": "Daily challenge", "url": "./?daily=1", "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }] },
+    { "name": "Mock interview", "url": "./?mode=interview", "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }] },
+    { "name": "Group discussion", "url": "./?mode=gd", "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }] }
+  ]
+}

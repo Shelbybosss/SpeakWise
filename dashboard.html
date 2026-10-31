@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>SpeakWise placement cell dashboard</title>
+<meta name="description" content="Combine students’ SpeakWise progress files in your browser to see a batch’s weak spots, who is improving and who has stopped practising.">
+<meta name="color-scheme" content="light dark">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/app.css">
+<script type="module" src="js/dashboard.js"></script>
+</head>
+<body>
+<header class="appbar">
+ <div class="appin">
+  <a class="brand" href="./" aria-label="SpeakWise home"><svg class="mark" viewBox="0 0 28 28" aria-hidden="true"><rect class="mk-a" x="2" y="11" width="4" height="8" rx="2"/><rect class="mk-b" x="9" y="5" width="4" height="18" rx="2"/><rect class="mk-a" x="16" y="8" width="4" height="12" rx="2"/><rect class="mk-b" x="23" y="12" width="3" height="6" rx="1.5"/></svg>SpeakWise</a>
+  <a class="btn mini onbar" href="./">Back to practice</a>
+ </div>
+</header>
+<main id="main" class="dash">
+<header class="pagehead"><h1>Placement cell dashboard</h1><p class="sub intro">Students download a progress file from their Progress tab and send it to you. Add the files here to see the whole batch. The files are read in this browser only: nothing is uploaded or saved, so closing the page clears it.</p></header>
+
+<section class="card">
+ <label class="drop" id="drop">
+  <input type="file" id="files" accept=".json,application/json" multiple>
+  <h2>Add progress files</h2>
+  <p class="sub">Drop files here, or <span class="pick">choose files</span>.</p>
+ </label>
+ <p class="foot msg" id="msg" aria-live="polite"></p>
+</section>
+
+<div id="out" class="hide">
+ <div class="stats" id="stats"></div>
+ <div class="two">
+  <section class="card"><h2>Batch skills</h2><p class="foot">Average of each student’s last 10 sessions.</p><div id="bskills"></div></section>
+  <section class="card"><h2>Needs attention</h2><p class="foot">No practice in the last 7 days, or an average under 5.</p><div id="attn" class="sub"></div></section>
+ </div>
+ <section class="card">
+  <div class="headrow"><h2>Students</h2>
+   <div class="row"><label class="field inline"><span class="label">Sort</span><span class="selwrap"><select id="sort"><option value="avg">Average score</option><option value="sessions">Sessions</option><option value="last">Last practised</option><option value="name">Name</option></select></span></label><button type="button" id="csv">Export CSV</button><button type="button" id="clear">Clear</button></div>
+  </div>
+  <div class="scroll-x"><table id="tbl"></table></div>
+ </section>
+</div>
+</main>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

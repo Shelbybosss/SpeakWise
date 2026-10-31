@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>SpeakWise: practise placement interviews out loud</title>
+<meta name="description" content="Practise placement interviews, GDs and HR answers out loud. Free, on-device feedback on pace, fillers, structure, voice and eye contact.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#042F2E" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#021C1B" media="(prefers-color-scheme: dark)">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="SpeakWise">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/app.css">
+<script type="module" src="js/app.js"></script>
+</head>
+<body data-view="home">
+<a class="skip" href="#main">Skip to content</a>
+<div class="edge b" aria-hidden="true"></div>
+<header class="appbar">
+ <div class="appin">
+  <a class="brand" href="./" aria-label="SpeakWise home"><svg class="mark" viewBox="0 0 28 28" aria-hidden="true"><rect class="mk-a" x="2" y="11" width="4" height="8" rx="2"/><rect class="mk-b" x="9" y="5" width="4" height="18" rx="2"/><rect class="mk-a" x="16" y="8" width="4" height="12" rx="2"/><rect class="mk-b" x="23" y="12" width="3" height="6" rx="1.5"/></svg>SpeakWise</a>
+  <div class="trail">
+   <span id="streak" class="pill hide"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.6 2.3c.3 2.6-.7 4.4-2.3 6-1.4 1.5-3.3 3.1-3.3 6.2a5 5 0 0 0 10 .2c0-1.7-.6-3-1.4-4 .1 1.3-.4 2.3-1.3 2.8.4-3.2-.4-8.5-1.7-11.2zM12 21.5a7 7 0 0 1-7-7c0-3.8 2.2-5.8 3.7-7.4 1.5-1.6 2.4-2.8 1.9-5.3a.8.8 0 0 1 1.2-.8c3.4 2.2 6.2 7.5 5.7 10.7 1.5 1.2 2.5 2.8 2.5 5a7 7 0 0 1-8 4.8z"/></svg><span id="streakn"></span></span>
+   <button id="install" class="icon hide" aria-label="Install app" title="Install app"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5v11M7.5 10.5 12 15l4.5-4.5"/><path d="M4.5 15.5v2.5a2.5 2.5 0 0 0 2.5 2.5h10a2.5 2.5 0 0 0 2.5-2.5v-2.5"/></svg></button>
+   <button id="privacy" class="icon" aria-label="Privacy and data" title="Privacy and data"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2 4.5 5v6.1c0 4.6 3.1 8.9 7.5 10.2 4.4-1.3 7.5-5.6 7.5-10.2V5zm0 5.3a2.2 2.2 0 0 1 1.2 4.1l.6 3.4h-3.6l.6-3.4A2.2 2.2 0 0 1 12 7.5z"/></svg></button>
+  </div>
+ </div>
+</header>
+<nav class="tabbar" id="nav" aria-label="Sections">
+ <button type="button" data-v="home" class="on" aria-current="page"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.3 2.6a1 1 0 0 1 1.4 0l8.6 8.1c.6.6.2 1.7-.7 1.7H19V20a1 1 0 0 1-1 1h-4v-6h-4v6H6a1 1 0 0 1-1-1v-7.6H3.4c-.9 0-1.3-1.1-.7-1.7z"/></svg><span>Home</span></button>
+ <button type="button" data-v="practice"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 14.5a3.5 3.5 0 0 0 3.5-3.5V5.5a3.5 3.5 0 0 0-7 0V11a3.5 3.5 0 0 0 3.5 3.5z"/><path d="M18.2 10.2a1 1 0 0 0-1 1 5.2 5.2 0 0 1-10.4 0 1 1 0 1 0-2 0 7.2 7.2 0 0 0 6.2 7.1V21a1 1 0 1 0 2 0v-2.7a7.2 7.2 0 0 0 6.2-7.1 1 1 0 0 0-1-1z"/></svg><span>Practice</span></button>
+ <button type="button" data-v="progress"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="3.5" y="12" width="4.5" height="9" rx="1.5"/><rect x="9.75" y="3" width="4.5" height="18" rx="1.5"/><rect x="16" y="8" width="4.5" height="13" rx="1.5"/></svg><span>Progress</span></button>
+</nav>
+
+<main id="main">
+<!-- Home -->
+<div class="view" id="v-home">
+ <section class="hero">
+  <div class="hero-copy">
+   <h1>Find your voice before the interview does.</h1>
+   <p class="lede"><strong>Your placement speaking coach.</strong> Practise HR answers, mock interviews and group discussions out loud. Get honest feedback on pace, fillers, structure, voice and eye contact, with a reason for every score.</p>
+   <div class="row ctas"><button type="button" class="p big" id="cta">Start practising</button><button type="button" class="ghost big" id="cta2">Surprise me</button></div>
+   <ul class="ticks"><li>Free, no account</li><li>Recordings stay on your device</li><li>7 languages</li></ul>
+  </div>
+  <div class="herowave" id="herowave" aria-hidden="true"></div>
+  <div class="next" id="homestats"></div>
+ </section>
+
+ <section class="block">
+  <h2>Ways to practise</h2>
+  <div class="modes">
+   <button type="button" class="mode" data-mode="topic"><span class="ic"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 14.5a3.5 3.5 0 0 0 3.5-3.5V5.5a3.5 3.5 0 0 0-7 0V11a3.5 3.5 0 0 0 3.5 3.5z"/><path d="M18.2 10.2a1 1 0 0 0-1 1 5.2 5.2 0 0 1-10.4 0 1 1 0 1 0-2 0 7.2 7.2 0 0 0 6.2 7.1V21a1 1 0 1 0 2 0v-2.7a7.2 7.2 0 0 0 6.2-7.1 1 1 0 0 0-1-1z"/></svg></span><span class="mt"><b>Single topic</b><small>One question, one minute, a full report.</small></span></button>
+   <button type="button" class="mode" data-mode="interview"><span class="ic"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2h8A2.5 2.5 0 0 1 17 4.5v5a2.5 2.5 0 0 1-2.5 2.5H10l-3.6 2.7A.9.9 0 0 1 5 14v-2.1A2.5 2.5 0 0 1 4 9.9z"/><path d="M19 8.2v3.3A4.5 4.5 0 0 1 14.5 16h-3.7l-.6.4A2.5 2.5 0 0 0 12.5 18H15l3.6 2.7a.9.9 0 0 0 1.4-.7v-2.1a2.5 2.5 0 0 0 1-2v-5.4a2.5 2.5 0 0 0-2-2.3z"/></svg></span><span class="mt"><b>Mock interview</b><small>Four questions in a row, with follow-ups on what you said.</small></span></button>
+   <button type="button" class="mode" data-mode="gd"><span class="ic"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="7" cy="7" r="3"/><circle cx="17" cy="7" r="3"/><path d="M1.5 18.5C1.5 15 4 12.5 7 12.5s5.5 2.5 5.5 6a1 1 0 0 1-1 1h-9a1 1 0 0 1-1-1zM13.4 19.5c.1-.3.1-.6.1-1 0-2-.7-3.8-1.9-5.1a5.4 5.4 0 0 1 5.4-.9c2.9.8 5.5 3.1 5.5 6a1 1 0 0 1-1 1z"/></svg></span><span class="mt"><b>Group discussion</b><small>Take a side, then answer a counter-argument.</small></span></button>
+  </div>
+ </section>
+
+ <div class="split">
+  <section class="block"><h2>Jump into a category</h2><div class="catlist" id="chips"></div></section>
+  <section class="block"><h2>Company packs</h2><p class="sub intro">Questions in the style each kind of recruiter asks, with tips for the round.</p><div class="catlist" id="packs"></div></section>
+ </div>
+
+ <section class="block">
+  <h2>How SpeakWise works</h2>
+  <ol class="steps">
+   <li><h3>Speak</h3><p>140+ questions across HR, tech, GD and company packs, plus live topics and questions from your own resume.</p></li>
+   <li><h3>Understand</h3><p>Pace, fillers, pauses, pitch, STAR structure and eye contact, each with a reason.</p></li>
+   <li><h3>Improve</h3><p>Retry a topic to see the change, and SpeakWise targets your weakest skill next.</p></li>
+  </ol>
+ </section>
+</div>
+
+<!-- Practice -->
+<div class="view hide" id="v-practice">
+ <header class="pagehead"><h1>Pick a question, then say it out loud</h1></header>
+ <div class="workbench">
+  <section class="card setup" id="setup">
+   <p class="label" id="modelbl">Mode</p>
+   <div class="seg seg-wide" role="radiogroup" aria-labelledby="modelbl">
+    <input type="radio" name="mode" id="m-topic" value="topic" checked><label for="m-topic">Single topic</label>
+    <input type="radio" name="mode" id="m-interview" value="interview"><label for="m-interview">Mock interview</label>
+    <input type="radio" name="mode" id="m-gd" value="gd"><label for="m-gd">Group discussion</label>
+   </div>
+   <p class="label gap" id="catlbl">Category</p>
+   <div class="chips" id="cats" role="group" aria-labelledby="catlbl"></div>
+   <p class="label gap" id="packlbl">Company packs</p>
+   <div class="chips" id="packchips" role="group" aria-labelledby="packlbl"></div>
+   <div class="setrow">
+    <div class="field"><span class="label" id="durlbl">Time</span><div class="seg" role="radiogroup" aria-labelledby="durlbl"><input type="radio" name="dur" id="d30" value="30"><label for="d30">30 s</label><input type="radio" name="dur" id="d60" value="60" checked><label for="d60">1 min</label><input type="radio" name="dur" id="d120" value="120"><label for="d120">2 min</label></div></div>
+    <label class="field"><span class="label">Language</span><span class="selwrap"><select id="lang"><option value="en-IN">English</option><option value="hinglish">Hinglish</option><option value="hi-IN">Hindi</option><option value="mr-IN">Marathi</option><option value="ta-IN">Tamil</option><option value="te-IN">Telugu</option><option value="bn-IN">Bengali</option></select></span></label>
+   </div>
+   <p class="foot hide" id="langnote"></p>
+   <p class="label gap">Get a topic</p>
+   <div class="row"><button type="button" id="newT">New topic</button><button type="button" id="smart" title="Picks the category you are weakest in">Smart pick</button><button type="button" id="daily">Daily challenge</button><button type="button" id="liveB" title="Finds a topic on Wikipedia about the subject you type below, or a random one">Live topic</button><button type="button" id="bankB">My bank</button></div>
+   <div class="own"><input id="own" maxlength="140" autocomplete="off" placeholder="Type your own topic, or a subject for Live topic" aria-label="Your own topic or a subject to search"><button type="button" id="useOwn">Use my topic</button><button type="button" id="saveT">Save topic</button></div>
+  </section>
+
+  <section class="card stage" aria-label="Speaking stage">
+   <div class="flowbar hide" id="flowbar"><span class="flowlbl" id="flowlbl"></span><span class="dots" id="dots" aria-hidden="true"></span><button type="button" class="mini" id="endflow">End</button></div>
+   <h2 id="topic">Choose a category, then press Start.</h2>
+   <p class="qmeta" id="tcat"></p>
+   <p class="sub" id="hint"></p>
+   <blockquote class="quote counter hide" id="counter"></blockquote>
+   <div class="chips stance hide" id="stance" role="group" aria-label="Your side in the discussion">
+    <button type="button" data-s="for" aria-pressed="true">For</button><button type="button" data-s="against" aria-pressed="false">Against</button><button type="button" data-s="balanced" aria-pressed="false">Balanced</button>
+   </div>
+   <canvas id="wave" aria-hidden="true"></canvas>
+   <div id="clock" role="timer">00:00</div>
+   <p class="fillwarn hide" id="fillwarn"></p>
+   <div class="row center">
+    <button type="button" class="p big" id="go"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 14.5a3.5 3.5 0 0 0 3.5-3.5V5.5a3.5 3.5 0 0 0-7 0V11a3.5 3.5 0 0 0 3.5 3.5z"/><path d="M18.2 10.2a1 1 0 0 0-1 1 5.2 5.2 0 0 1-10.4 0 1 1 0 1 0-2 0 7.2 7.2 0 0 0 6.2 7.1V21a1 1 0 1 0 2 0v-2.7a7.2 7.2 0 0 0 6.2-7.1 1 1 0 0 0-1-1z"/></svg>Start</button>
+    <button type="button" class="p big hide" id="skip">Start speaking now</button>
+    <button type="button" class="rec big hide" id="stop"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="2.5"/></svg>Stop &amp; get feedback</button>
+   </div>
+   <p class="foot" id="gohint">You get 15 seconds to plan, then recording starts.</p>
+   <p class="sub" id="live" aria-live="polite"></p>
+   <video id="vid" class="hide" muted playsinline aria-label="Camera preview"></video>
+   <p class="warn hide" id="nosr">Live transcription needs Chrome or Edge on desktop or Android. In other browsers, press Start and speak as normal, then type what you said in the box that opens. Pace, pauses and voice are still measured.</p>
+  </section>
+
+  <section class="card rows opts" id="opts" aria-label="Recording options">
+   <label class="r"><span>Keep a recording for playback<small>Kept only until you close the page</small></span><input type="checkbox" class="sw" id="rc" checked></label>
+   <label class="r"><span>Use camera<small>Eye contact is analysed on your device</small></span><input type="checkbox" class="sw" id="cam" checked></label>
+   <label class="r hide" id="aiRow"><span>AI follow-ups <span class="tag">uses AI</span><small>Follow-ups react to what you said. Sends your transcript text to Google’s Gemini API.</small></span><input type="checkbox" class="sw" id="aif"></label>
+   <div class="r static"><span>Microphone</span><div class="lvlwrap"><div class="lvl" role="meter" aria-label="Microphone level" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="lvl"><div id="vol"></div></div><button type="button" id="mt" class="mini">Test mic</button></div></div>
+  </section>
+
+  <details class="card more resume" id="resumebox">
+   <summary>Questions from your resume</summary>
+   <p class="sub">Paste your resume as text. SpeakWise picks out your projects, internships and skills and writes questions about them. This happens on your device, and only the questions are saved, not your resume.</p>
+   <textarea id="resume" placeholder="Paste your resume text here" aria-label="Resume text"></textarea>
+   <div class="row"><button type="button" class="p" id="mkq">Make questions</button><button type="button" id="clrq" class="hide">Remove resume questions</button></div>
+  </details>
+  <details class="card more manual" id="manualbox"><summary>No microphone? Analyse typed text</summary><textarea id="manual" placeholder="Type or paste your answer, then press Analyse." aria-label="Your answer"></textarea><button type="button" id="an" class="p">Analyse</button></details>
+ </div>
+
+ <section class="card hide" id="rep" aria-live="polite"></section>
+</div>
+
+<!-- Progress -->
+<div class="view hide" id="v-progress">
+ <header class="pagehead"><h1>See what’s getting better</h1></header>
+ <section class="card" id="progcard"><h2>Overall score</h2><div id="prog" class="sub">Complete a session to see your learner profile.</div></section>
+ <div class="two">
+  <section class="card"><h2>Skills</h2><p class="foot">Average of your last 10 sessions.</p><div id="skills" class="sub">No sessions yet.</div></section>
+  <section class="card"><h2>Your filler words</h2><p class="foot">SpeakWise warns you about these while you speak.</p><div id="myfills" class="sub">No fillers recorded yet.</div></section>
+ </div>
+ <section class="card"><h2>Session history</h2><div id="hist" class="sub"></div></section>
+ <div class="two">
+  <section class="card">
+   <h2>Share with your placement cell</h2>
+   <p class="sub">Download a progress file and send it to your training and placement officer. It holds your scores, dates and categories only: no recordings, transcripts or topics.</p>
+   <div class="form">
+    <label class="field"><span class="label">Name</span><input id="pname" maxlength="60" autocomplete="name"></label>
+    <label class="field"><span class="label">Roll number</span><input id="proll" maxlength="30" autocomplete="off"></label>
+    <label class="field"><span class="label">College</span><input id="pcol" maxlength="80" autocomplete="organization"></label>
+   </div>
+   <div class="row"><button type="button" class="p" id="share">Download progress file</button><a class="btn" href="dashboard.html">Placement cell dashboard</a></div>
+  </section>
+  <section class="card">
+   <h2>Daily reminder</h2>
+   <p class="sub">Add a repeating reminder to your phone or laptop calendar for the daily challenge.</p>
+   <div class="row remind"><label class="field inline"><span class="label">Time</span><input type="time" id="rtime" value="19:00"></label><button type="button" id="remind">Add to calendar</button></div>
+  </section>
+ </div>
+ <section class="card prose"><h2>How scoring works</h2>
+  <p class="sub">Measured numbers (pace, fillers, pauses, time, voice, eye contact) are counted directly and are reproducible. Estimated numbers (relevance, structure, vocabulary) are heuristics; treat them as guidance.</p>
+  <p class="sub">Structure checks where things happen, not just whether a phrase appears: the opening must come early and the conclusion at the end. Story questions (“Tell me about a time…”) are checked for STAR: Situation, Task, Action, Result. Relevance counts the topic’s key ideas, and is capped if you only repeat the keywords. If you use the AI coach, its relevance verdict replaces the keyword estimate.</p>
+  <p class="sub">Benchmarks: 120 to 160 words a minute is a comfortable speaking pace; pauses over 2 s are treated as hesitation; filler targets follow common public-speaking rubrics. Speech recognition can mishear accents, so you can always correct the transcript and re-analyse.</p>
+ </section>
+</div>
+</main>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<dialog id="dlg" aria-labelledby="dlgt"><h2 id="dlgt">Privacy &amp; data</h2>
+<ul class="plist">
+ <li>Recordings and camera frames are analysed on your device and never uploaded. A recording exists only until you close the page.</li>
+ <li>The face model file is downloaded once from Google and jsDelivr.</li>
+ <li>Speech is transcribed by your browser’s speech service (Chrome and Edge send audio to their provider for recognition).</li>
+ <li>Sessions, saved topics, resume questions and your placement-cell details are stored only in this browser’s localStorage. Your resume text is never stored.</li>
+ <li>If you press Rephrase my answer, or turn on AI follow-ups, your transcript text (never audio or video) is sent through this site’s server to Google’s Gemini API; the site does not store it. On Google’s free tier, Google may use submitted text to improve its products, so do not include private information.</li>
+ <li>The progress file for your placement cell contains scores, dates and categories only, and is shared only if you send it.</li>
+</ul>
+<div class="row end"><button type="button" id="wipe" class="danger">Delete all my data</button><button type="button" id="cl">Done</button></div></dialog>
+
+<script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>

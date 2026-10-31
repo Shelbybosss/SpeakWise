@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>SpeakWise launch video</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=block" rel="stylesheet">
+<!-- The app's real stylesheet: every UI panel below uses its classes and markup. -->
+<link rel="stylesheet" href="../../css/app.css">
+<style>
+html,body{margin:0;width:1920px;height:1080px;overflow:hidden;background:#042F2E}
+body{min-height:0}
+#v{position:relative;width:1920px;height:1080px;overflow:hidden;color:#F0FDFA;font-family:var(--ui)}
+.bgl{position:absolute;inset:0;background:linear-gradient(160deg,#042F2E,#063B39 70%,#04322F)}
+.glow{position:absolute;width:1400px;height:900px;border-radius:50%;background:radial-gradient(closest-side,rgba(45,212,191,.22),transparent);filter:blur(10px)}
+.sc{position:absolute;inset:0;display:none;will-change:transform,opacity}
+.cap{position:absolute;left:150px;top:0;bottom:0;width:640px;display:flex;flex-direction:column;justify-content:center}
+.cap .k{font:800 26px/1 var(--ui);letter-spacing:.08em;text-transform:uppercase;color:#2DD4BF;margin:0 0 22px}
+.cap h2{font:900 84px/1.02 var(--display);letter-spacing:-.03em;color:#F0FDFA;margin:0 0 26px;text-wrap:balance}
+.cap h2 span{color:#2DD4BF}
+.cap p{font:500 34px/1.35 var(--ui);color:#A9D6CF;margin:0;max-width:16em}
+.ui{position:absolute;transform-origin:center center}
+.ui .card{box-shadow:0 40px 90px -30px rgba(0,0,0,.6);margin:0}
+.ui .card:not(.stage),.browser{color:var(--label)}
+.ui .card.stage{box-shadow:0 40px 90px -30px rgba(0,0,0,.7),0 0 0 1.5px rgba(255,255,255,.12)}
+.vcenter{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.tquote{font:900 132px/1.02 var(--display);letter-spacing:-.035em;margin:0}
+.tquote i{font-style:normal;display:inline-block}
+.typed{font:500 48px/1.4 var(--ui);color:#A9D6CF;margin:54px 0 0;max-width:1640px;min-height:140px}
+.typed .f{font-size:inherit;padding:0 6px;border-radius:8px;white-space:nowrap}
+.caret{display:inline-block;width:4px;height:52px;background:#2DD4BF;vertical-align:-8px;margin-left:4px}
+.logo{display:flex;align-items:center;gap:20px;height:240px}
+.logo b{display:block;width:46px;border-radius:23px;transform-origin:center}
+.word{font:900 150px/1 var(--display);letter-spacing:-.035em;margin:30px 0 0}
+.tag2{font:800 58px/1.2 var(--display);letter-spacing:-.02em;margin:34px 0 0;color:#F0FDFA}.tag2 span{color:#2DD4BF}
+.vwave{display:flex;align-items:center;justify-content:flex-start;gap:3px;height:96px;margin:24px 0 6px}
+.vwave i{width:3px;border-radius:2px;flex:none}
+.vtopic{font:800 36px/1.15 var(--display);letter-spacing:-.02em;margin:4px auto 12px;max-width:18em;text-wrap:balance}
+.vclock{font:800 48px/1 var(--display);font-variant-numeric:tabular-nums;margin:6px 0 14px;letter-spacing:-.02em;color:#FF8A80}
+.vclock::before{content:"";display:inline-block;width:.26em;height:.26em;border-radius:50%;background:currentColor;margin-right:.25em;vertical-align:.12em}
+.vlive{min-height:4.4em;max-width:36em;margin:12px auto 0;color:#A9D6CF;font-size:15px;line-height:1.45}
+#cursor{position:absolute;left:0;top:0;width:54px;height:54px;z-index:50;pointer-events:none;display:none}
+#ripple{position:absolute;width:90px;height:90px;margin:-45px 0 0 -45px;border-radius:50%;border:4px solid #2DD4BF;z-index:49;display:none}
+.browser{border-radius:16px;overflow:hidden;background:var(--bg);box-shadow:0 40px 90px -30px rgba(0,0,0,.7),0 0 0 1px rgba(255,255,255,.1)}
+.browser .bar{display:flex;align-items:center;gap:7px;height:38px;padding:0 14px;background:#0B1514;color:#9FB3AF;font:700 13px/1 var(--ui)}
+.browser .bar i{width:11px;height:11px;border-radius:50%;background:#3A4644}
+.browser .bar span{margin-left:12px}
+.browser .inner{padding:22px}
+.outh{font:900 112px/1.02 var(--display);letter-spacing:-.035em;max-width:14em;margin:36px 0 0;text-wrap:balance}.outh span{color:#2DD4BF}
+.outs{font:600 38px/1.3 var(--ui);color:#A9D6CF;margin:34px 0 0}
+.cta{display:inline-flex;align-items:center;gap:14px;margin-top:46px;padding:24px 44px;border-radius:999px;background:#2DD4BF;color:#04211E;font:800 38px/1 var(--ui)}
+.url{font:700 32px/1 var(--ui);color:#F0FDFA;margin-top:28px;letter-spacing:.01em}
+.cap2{position:absolute;left:0;right:0;top:86px;text-align:center}
+.cap2 .k{font:800 26px/1 var(--ui);letter-spacing:.08em;text-transform:uppercase;color:#2DD4BF;margin:0 0 18px}
+.cap2 h2{font:900 76px/1.05 var(--display);letter-spacing:-.03em;margin:0}
+.cap2 p{font:500 32px/1.3 var(--ui);color:#A9D6CF;margin:16px 0 0}
+</style>
+</head>
+<body>
+<div id="v">
+ <div class="bgl"></div>
+ <div class="glow" id="g1"></div><div class="glow" id="g2" style="width:1000px;height:700px;opacity:.6"></div>
+
+ <!-- 1 Hook -->
+ <section class="sc" id="s1"><div class="vcenter">
+  <p class="cap" style="position:static;width:auto;display:block"><span class="k" id="s1k" style="display:block">Campus placements · Round 1</span></p>
+  <h1 class="tquote" id="s1q"><i>“Tell</i> <i>me</i> <i>about</i> <i>yourself.”</i></h1>
+  <p class="typed" id="s1t"></p>
+ </div></section>
+
+ <!-- 2 Reveal -->
+ <section class="sc" id="s2"><div class="vcenter">
+  <div class="logo" id="s2l"><b style="height:96px;background:#2DD4BF"></b><b style="height:216px;background:#FFB547"></b><b style="height:144px;background:#2DD4BF"></b><b style="height:72px;width:36px;background:#FFB547"></b></div>
+  <div class="word" id="s2w">SpeakWise</div>
+  <div class="tag2" id="s2t">Rehearse out loud. <span>See exactly what to fix.</span></div>
+ </div></section>
+
+ <!-- 3 Pick -->
+ <section class="sc" id="s3">
+  <div class="cap"><p class="k">Pick</p><h2>140+ placement questions</h2><p>HR, tech and GD rounds, plus company packs.</p></div>
+  <div class="ui" id="s3ui" style="left:860px;top:180px;width:680px;transform:scale(1.36);transform-origin:left top">
+   <section class="card" id="setup">
+    <p class="eyebrow">Mode</p>
+    <div class="seg seg-wide" role="radiogroup"><input type="radio" name="vm" id="vm1" checked><label for="vm1">Single topic</label><input type="radio" name="vm" id="vm2"><label for="vm2">Mock interview</label><input type="radio" name="vm" id="vm3"><label for="vm3">Group discussion</label></div>
+    <p class="eyebrow gap">Category</p>
+    <div class="chips" style="margin:0;padding:2px 0 4px;overflow:hidden"><button id="c-hr" aria-pressed="true">HR &amp; Behavioural</button><button aria-pressed="false">Tech &amp; AI</button><button aria-pressed="false">Computer Science Basics</button></div>
+    <p class="eyebrow gap">Company packs</p>
+    <div class="chips" style="margin:0;padding:2px 0 4px;overflow:hidden"><button id="c-it" aria-pressed="false">IT services</button><button aria-pressed="false">Product &amp; startups</button><button aria-pressed="false">Banking &amp; finance</button></div>
+    <div class="setrow"><div class="field"><span class="eyebrow">Time</span><div class="seg"><input type="radio" name="vd" id="vd1"><label for="vd1">30 s</label><input type="radio" name="vd" id="vd2" checked><label for="vd2">1 min</label><input type="radio" name="vd" id="vd3"><label for="vd3">2 min</label></div></div>
+     <label class="field"><span class="eyebrow">Language</span><select><option>English</option></select></label></div>
+    <p class="eyebrow">Get a topic</p>
+    <div class="row"><button id="b-new">New topic</button><button>Smart pick</button><button>Daily challenge</button></div>
+   </section>
+  </div>
+ </section>
+
+ <!-- 4 Speak -->
+ <section class="sc" id="s4">
+  <div class="cap"><p class="k">Speak</p><h2>Answer out loud</h2><p>Pace, pauses and voice are analysed on your device.</p></div>
+  <div class="ui" style="left:870px;top:110px;width:680px;transform:scale(1.3);transform-origin:left top">
+   <section class="card stage">
+    <p class="eyebrow">IT services</p>
+    <h2 class="vtopic">Tell me about a time you learned a new technology quickly</h2>
+    <p class="sub">STAR tip: Situation, Task, Action, Result. Spend most of your time on what you did.</p>
+    <div class="vwave" id="s4w"></div>
+    <div class="vclock" id="s4c">00:00 / 01:00</div>
+    <div class="row center"><button class="rec big"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="2.5"/></svg>Stop &amp; get feedback</button></div>
+    <p class="vlive" id="s4l"></p>
+   </section>
+  </div>
+ </section>
+
+ <!-- 5 Feedback -->
+ <section class="sc" id="s5">
+  <div class="cap"><p class="k">Feedback</p><h2>Every score tells you <span>why</span></h2><p>Measured or estimated, with the evidence for each.</p></div>
+  <div class="ui" style="left:880px;top:60px;width:640px;transform:scale(1.2);transform-origin:left top">
+   <section class="card" id="rep">
+    <h2>Feedback</h2><p class="sub qline">Tell me about a time you learned a new technology quickly</p>
+    <div class="sum"><svg class="ring" viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" class="rt"/><circle cx="60" cy="60" r="52" class="rv" id="s5r" stroke-dasharray="0 327"/><text x="60" y="64" text-anchor="middle" class="rn" id="s5n">0.0</text><text x="60" y="84" text-anchor="middle" class="rd">of 10</text></svg>
+     <div><p class="lead">Strongest: <b>Structure</b><br>Fix first: <b>Relevance</b></p><p class="sub">Name the topic's key ideas in your first two sentences, then explain them.</p></div></div>
+    <div class="metrics" id="s5m"></div>
+   </section>
+  </div>
+ </section>
+
+ <!-- 6 Retry -->
+ <section class="sc" id="s6">
+  <div class="cap"><p class="k">Improve</p><h2>Retry. See what <span>improved.</span></h2><p>A STAR check for every story question.</p></div>
+  <div class="ui" style="left:880px;top:92px;width:640px;transform:scale(1.25);transform-origin:left top">
+   <section class="card">
+    <div class="callout" style="margin-top:0"><h3>STAR check</h3><div class="star" id="s6s"></div><p class="sub">All four parts are there. Make the result concrete with a number if you can.</p></div>
+    <div class="callout" style="margin-bottom:0"><h3>Compared with your last try</h3><p class="sub" id="s6h">Up 5.6 overall: 3.4 on 2026-10-30, 9.0 now.</p><table id="s6t"><tr><th>Skill</th><th class="num">Before</th><th class="num">Now</th><th class="num">Change</th></tr></table></div>
+   </section>
+  </div>
+ </section>
+
+ <!-- 7 Go further -->
+ <section class="sc" id="s7">
+  <div class="cap2"><p class="k">Go further</p><h2>Mock interviews and group discussions</h2><p>Follow-up questions to think on your feet. Counter-arguments to answer.</p></div>
+  <div class="ui" id="s7a" style="left:70px;top:370px;width:740px;transform-origin:left top">
+   <section class="card"><div class="callout summary" style="margin:0">
+    <p class="eyebrow">Mock interview complete</p><h3>Average 8.1 out of 10 across 4 answers</h3>
+    <table><tr><th>Round</th><th>Question</th><th class="num">Score</th></tr>
+     <tr><td>Q1</td><td>Tell me about a time you learned a new technology quickly</td><td class="num">9.0</td></tr>
+     <tr><td>Q2</td><td>How do you learn when there's no tutorial?</td><td class="num">7.9</td></tr>
+     <tr><td>Q3</td><td>Explain the four pillars of OOP with examples</td><td class="num">7.4</td></tr>
+     <tr><td>Q4</td><td>Which one did you use in your project?</td><td class="num">8.1</td></tr></table>
+   </div></section>
+  </div>
+  <div class="ui" id="s7b" style="left:976px;top:370px;width:740px;transform-origin:left top">
+   <section class="card stage" style="padding:24px 26px 22px">
+    <div class="flowbar"><span class="eyebrow">GD · Rebuttal · Against</span><span class="dots"><i class="done"></i><i class="now"></i></span></div>
+    <p class="eyebrow">Another participant</p>
+    <h2 class="vtopic" style="font-size:28px">Respond to this point on “Should coding be taught from school level?”</h2>
+    <blockquote class="quote counter" style="margin-top:10px">“I disagree. The benefits are bigger than you suggest, and the problems you raised can be managed with the right rules.”</blockquote>
+    <div class="vwave" id="s7w" style="height:64px;margin:16px 0 4px"></div>
+    <div class="vclock" id="s7c" style="font-size:38px;margin:4px 0 0">00:00 / 00:30</div>
+   </section>
+  </div>
+ </section>
+
+ <!-- 8 Colleges -->
+ <section class="sc" id="s8">
+  <div class="cap"><p class="k">For placement cells</p><h2>See the whole batch</h2><p>Scores only. No recordings collected.</p></div>
+  <div class="ui" style="left:840px;top:150px;width:900px;transform:scale(1.06);transform-origin:left top">
+   <div class="browser"><div class="bar"><i></i><i></i><i></i><span>Placement cell dashboard</span></div><div class="inner">
+    <div class="stats" id="s8s"></div>
+    <div class="two" style="gap:16px">
+     <section class="card"><h2>Batch skills</h2><p class="foot">Average of each student's last 10 sessions.</p><div id="s8k"></div></section>
+     <section class="card"><h2>Needs attention</h2><p class="foot">No practice in the last 7 days, or an average under 5.</p>
+      <ul class="avgs" id="s8a"><li><span>Arjun Rao · CE-007</span><span>16 days inactive</span></li><li><span>Rohit Verma · CE-055</span><span>average 4.4</span></li></ul></section>
+    </div>
+   </div></div>
+  </div>
+ </section>
+
+ <!-- 9 Outro -->
+ <section class="sc" id="s9"><div class="vcenter">
+  <div class="logo" id="s9l" style="height:130px;gap:12px"><b style="height:52px;width:26px;background:#2DD4BF"></b><b style="height:118px;width:26px;background:#FFB547"></b><b style="height:78px;width:26px;background:#2DD4BF"></b><b style="height:40px;width:20px;background:#FFB547"></b></div>
+  <h2 class="outh" id="s9h">Find your voice <span>before the interview does.</span></h2>
+  <p class="outs" id="s9s">SpeakWise · Free · No sign-up · Works in your browser</p>
+  <div class="cta" id="s9c">Practise your first answer free</div>
+  <div class="url" id="s9u"></div>
+ </div></section>
+
+ <div id="ripple"></div>
+ <svg id="cursor" viewBox="0 0 32 32"><path d="M6 3.5 25.5 17l-8.6 1.4 5 9.3-3.7 2-5-9.3L7.4 26z" fill="#fff" stroke="#04211E" stroke-width="2" stroke-linejoin="round"/></svg>
+</div>
+
+<script>
+// Set this to your live address before rendering, e.g. "speakwise.app"; leave empty to hide the line.
+const URL_TEXT = new URLSearchParams(location.search).get("url") || "";
+
+const $ = id => document.getElementById(id);
+const clamp = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x));
+const p = (t, a, d) => clamp((t - a) / d);
+const eo = x => 1 - Math.pow(1 - x, 3);
+const back = x => { const c = 1.7; return 1 + (c + 1) * Math.pow(x - 1, 3) + c * Math.pow(x - 1, 2); };
+const rise = (el, k, dy = 26) => { el.style.opacity = k; el.style.transform = `translateY(${(1 - k) * dy}px)`; };
+const noise = i => { const x = Math.sin(i * 12.9898) * 43758.5453; return x - Math.floor(x); };
+const mix = (a, b, k) => "#" + a.map((v, i) => Math.round(v + (b[i] - v) * k).toString(16).padStart(2, "0")).join("");
+const TEAL = [45, 212, 191], GOLD = [255, 181, 71];
+
+const SCENES = [["s1", 0, 4], ["s2", 4, 7.5], ["s3", 7.5, 12], ["s4", 12, 17.5], ["s5", 17.5, 24], ["s6", 24, 29], ["s7", 29, 33.5], ["s8", 33.5, 37], ["s9", 37, 41]];
+const DURATION = 41;
+
+/* ---------- static content built once ---------- */
+const ICON_OK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.5"/><path d="m7.8 12.4 2.9 2.9 5.6-6"/></svg>';
+const METRICS = [["Pace", "measured", 8.9], ["Fillers", "measured", 10], ["Fluency", "measured", 10], ["Vocabulary", "estimated", 10], ["Structure (STAR)", "estimated", 10], ["Relevance", "estimated", 7.6], ["Time use", "measured", 7.8], ["Voice variety", "measured", 7.8]];
+$("s5m").innerHTML = METRICS.map(([n, tag, v]) => `<details class="metric ok"><summary><span>${n}<span class="tag">${tag}</span></span><span class="mv">${ICON_OK}<b>${v.toFixed(1)}</b></span><span class="bar"><i style="width:0"></i></span></summary></details>`).join("");
+$("s6s").innerHTML = [["S", "Situation"], ["T", "Task"], ["A", "Action"], ["R", "Result"]].map(([l, n]) => `<div class="n"><b>${l}</b><span>${n}</span><small>Missing</small></div>`).join("");
+const CMP = [["Fillers", 0, 10], ["Fluency", .8, 10], ["Relevance", 0, 7.6], ["Voice variety", 1.9, 7.8], ["Pace", 5.1, 8.9]];
+$("s6t").insertAdjacentHTML("beforeend", CMP.map(([n, b, a]) => `<tr><td>${n}</td><td class="num">${b.toFixed(1)}</td><td class="num">${a.toFixed(1)}</td><td class="num"><span class="up">▲ ${(a - b).toFixed(1)}</span></td></tr>`).join(""));
+const STATS = [["Students", 6], ["Sessions", 65], ["Batch average", 6.1], ["Most common weak spot", "Voice variety"]];
+$("s8s").innerHTML = STATS.map(([k]) => `<div class="stat"><span class="eyebrow">${k}</span><b></b></div>`).join("");
+const SKILLS = [["Pace", 6.3], ["Fillers", 5.5], ["Fluency", 6.2], ["Vocabulary", 7.2], ["Structure", 5.2], ["Relevance", 6.5], ["Time use", 7.9], ["Voice variety", 5.5]];
+$("s8k").innerHTML = SKILLS.map(([n, v]) => `<div class="skill"><span>${n}</span><span class="track"><i style="width:0"></i></span><b>${v.toFixed(1)}</b></div>`).join("");
+function bars(el, n) { el.innerHTML = Array.from({ length: n }, () => "<i></i>").join(""); return [...el.children]; }
+const W4 = bars($("s4w"), 104), W7 = bars($("s7w"), 110);
+function wave(list, filled, h) {
+  list.forEach((b, i) => {
+    const on = i < filled, env = .35 + .65 * Math.abs(Math.sin(i * .31)) * (.5 + .5 * noise(i));
+    b.style.height = on ? Math.max(4, env * h) + "px" : "4px";
+    b.style.background = on ? mix(TEAL, GOLD, i / list.length) : "rgba(255,255,255,.16)";
+  });
+}
+if (URL_TEXT) $("s9u").textContent = URL_TEXT; else $("s9u").style.display = "none";
+
+const HOOK = [["Um,", 1], [" so ", 0], ["basically", 1], [" I am, ", 0], ["like", 1], [", a hard-working person and, ", 0], ["you know", 1], ["…", 0]];
+const HOOK_LEN = HOOK.reduce((n, [s]) => n + s.length, 0);
+const ANSWER = "In my third year, our team had two weeks to build a placement portal, and none of us knew React. My task was to get the front end working. I decided to learn by building: I followed the official docs for two days, then I rebuilt one page every evening and asked a senior to review my code. As a result we shipped the portal on time, two hundred students used it, and I learned that I pick up new technology fastest by building a real project.";
+
+/* ---------- per-frame render ---------- */
+function envelope(t, a, b, first, last) {
+  const kin = first ? 1 : eo(p(t, a, .45)), kout = last ? 1 : 1 - eo(p(t, b - .35, .35));
+  return { k: kin * kout, dy: (1 - kin) * 34 - (1 - kout) * 22 };
+}
+function cursorAt(x, y, show, clickT, t) {
+  const c = $("cursor"), r = $("ripple");
+  c.style.display = show > 0 ? "block" : "none"; c.style.opacity = show;
+  c.style.transform = `translate(${x - 6}px,${y - 4}px) scale(${clickT != null && t - clickT >= 0 && t - clickT < .18 ? .86 : 1})`;
+  const rt = clickT != null ? t - clickT : -1;
+  if (rt >= 0 && rt < .5) { r.style.display = "block"; r.style.left = x + "px"; r.style.top = y + "px"; r.style.opacity = 1 - rt / .5; r.style.transform = `scale(${.4 + rt * 2})`; }
+  else r.style.display = "none";
+}
+function center(el) { const b = el.getBoundingClientRect(); return [b.left + b.width / 2, b.top + b.height / 2]; }
+
+window.renderAt = function (t) {
+  $("g1").style.transform = `translate(${900 + Math.sin(t * .25) * 180}px,${-420 + Math.cos(t * .2) * 90}px)`;
+  $("g2").style.transform = `translate(${-300 + Math.cos(t * .18) * 160}px,${560 + Math.sin(t * .22) * 80}px)`;
+  let cursorShown = false;
+  SCENES.forEach(([id, a, b], i) => {
+    const el = $(id), on = t >= a && t < b + (i === SCENES.length - 1 ? 1 : 0);
+    el.style.display = on ? "block" : "none";
+    if (!on) return;
+    const e = envelope(t, a, b, i === 0, i === SCENES.length - 1);
+    el.style.opacity = e.k; el.style.transform = `translateY(${e.dy}px)`;
+    const u = t - a;
+    if (id === "s1") {
+      rise($("s1k"), eo(p(u, .05, .4)));
+      [...$("s1q").children].forEach((w, j) => rise(w, eo(p(u, .2 + j * .16, .35)), 40));
+      const n = Math.floor(HOOK_LEN * clamp((u - 1.45) / 1.85));
+      let left = n, html = "";
+      for (const [s, f] of HOOK) {
+        if (left <= 0) break;
+        const part = s.slice(0, left); left -= s.length;
+        html += f && part.length === s.length ? `<span class="f">${part}</span>` : part;
+      }
+      const blink = u < 1.45 || Math.floor(u * 2.2) % 2 === 0;
+      $("s1t").innerHTML = html + (u > 1.2 ? `<span class="caret" style="opacity:${blink ? 1 : 0}"></span>` : "");
+    }
+    if (id === "s2") {
+      [...$("s2l").children].forEach((bar, j) => { const k = back(p(u, .1 + j * .09, .5)); bar.style.transform = `scaleY(${Math.max(0, k)})`; bar.style.opacity = clamp(k * 3); });
+      rise($("s2w"), eo(p(u, .45, .45)), 30);
+      rise($("s2t"), eo(p(u, .75, .45)), 30);
+    }
+    if (id === "s3") {
+      [...el.querySelectorAll(".cap > *")].forEach((c, j) => rise(c, eo(p(u, .1 + j * .12, .45))));
+      const ui = $("s3ui"), k = eo(p(u, 0, .6));
+      ui.style.opacity = k; ui.style.transform = `translateX(${(1 - k) * 120}px) scale(1.36)`;
+      const it = u >= 1.5, nt = u >= 3;
+      $("c-it").setAttribute("aria-pressed", String(it)); $("c-hr").setAttribute("aria-pressed", String(!it));
+      $("b-new").style.background = nt && u < 3.25 ? "var(--fill2)" : "";
+      const start = [1700, 1040], A = center($("c-it")), B = center($("b-new"));
+      let x, y;
+      if (u < 1.4) { const m = eo(p(u, .6, .8)); x = start[0] + (A[0] - start[0]) * m; y = start[1] + (A[1] - start[1]) * m; }
+      else if (u < 1.9) { x = A[0]; y = A[1]; }
+      else { const m = eo(p(u, 1.9, .95)); x = A[0] + (B[0] - A[0]) * m; y = A[1] + (B[1] - A[1]) * m; }
+      const show = clamp((u - .6) / .2) * (1 - clamp((u - 3.5) / .3)) * e.k;
+      cursorAt(x, y, show, u >= 3 ? a + 3 : u >= 1.5 ? a + 1.5 : null, t);
+      cursorShown = show > 0;
+    }
+    if (id === "s4") {
+      [...el.querySelectorAll(".cap > *")].forEach((c, j) => rise(c, eo(p(u, .1 + j * .12, .45))));
+      const secs = Math.max(0, (u - .4) * 4.8);
+      $("s4c").textContent = `00:${String(Math.floor(secs)).padStart(2, "0")} / 01:00`;
+      wave(W4, Math.floor(clamp((u - .4) / 4.6) * W4.length), 88);
+      const chars = Math.floor(clamp((u - .5) / 4.7) * ANSWER.length), shown = ANSWER.slice(0, chars);
+      $("s4l").textContent = shown.length > 190 ? "…" + shown.slice(-190).replace(/^\S*\s/, "") : shown;
+    }
+    if (id === "s5") {
+      [...el.querySelectorAll(".cap > *")].forEach((c, j) => rise(c, eo(p(u, .1 + j * .12, .45))));
+      const r = eo(p(u, .5, 1)), C = 2 * Math.PI * 52;
+      $("s5r").setAttribute("stroke-dasharray", `${(9 / 10 * C * r).toFixed(1)} ${C.toFixed(1)}`);
+      $("s5n").textContent = (9 * r).toFixed(1);
+      [...$("s5m").children].forEach((row, j) => {
+        const k = eo(p(u, .9 + j * .22, .4)); rise(row, k, 16);
+        row.querySelector(".bar i").style.width = METRICS[j][2] * 10 * eo(p(u, 1 + j * .22, .5)) + "%";
+      });
+    }
+    if (id === "s6") {
+      [...el.querySelectorAll(".cap > *")].forEach((c, j) => rise(c, eo(p(u, .1 + j * .12, .45))));
+      [...$("s6s").children].forEach((tile, j) => {
+        const done = u >= .6 + j * .25, k = eo(p(u, .6 + j * .25, .3));
+        tile.className = done ? "y" : "n"; tile.querySelector("small").textContent = done ? "Found" : "Missing";
+        tile.style.transform = `scale(${done ? .9 + .1 * back(k) : 1})`;
+      });
+      [...$("s6t").rows].slice(1).forEach((row, j) => rise(row, eo(p(u, 1.7 + j * .2, .35)), 12));
+    }
+    if (id === "s7") {
+      [...el.querySelectorAll(".cap2 > *")].forEach((c, j) => rise(c, eo(p(u, .05 + j * .12, .45))));
+      const ka = eo(p(u, .3, .6)), kb = eo(p(u, .45, .6));
+      $("s7a").style.opacity = ka; $("s7a").style.transform = `translateX(${(ka - 1) * 140}px) scale(1.18)`;
+      $("s7b").style.opacity = kb; $("s7b").style.transform = `translateX(${(1 - kb) * 140}px) scale(1.18)`;
+      const secs = Math.max(0, (u - .7) * 3.2);
+      $("s7c").textContent = `00:${String(Math.floor(secs)).padStart(2, "0")} / 00:30`;
+      wave(W7, Math.floor(clamp((u - .7) / 3.4) * W7.length * .62), 58);
+    }
+    if (id === "s8") {
+      [...el.querySelectorAll(".cap > *")].forEach((c, j) => rise(c, eo(p(u, .1 + j * .12, .45))));
+      const c = eo(p(u, .45, .9));
+      [...$("s8s").children].forEach((s, j) => {
+        const v = STATS[j][1];
+        s.querySelector("b").textContent = typeof v === "string" ? v : Number.isInteger(v) ? Math.round(v * c) : (v * c).toFixed(1);
+        rise(s, eo(p(u, .3 + j * .08, .4)), 14);
+      });
+      [...$("s8k").children].forEach((s, j) => s.querySelector("i").style.width = SKILLS[j][1] * 10 * eo(p(u, .7 + j * .08, .55)) + "%");
+      [...$("s8a").children].forEach((li, j) => rise(li, eo(p(u, 1.2 + j * .15, .4)), 10));
+    }
+    if (id === "s9") {
+      [...$("s9l").children].forEach((bar, j) => { const k = back(p(u, .05 + j * .07, .45)); bar.style.transform = `scaleY(${Math.max(0, k)})`; bar.style.opacity = clamp(k * 3); });
+      rise($("s9h"), eo(p(u, .25, .5)), 34);
+      rise($("s9s"), eo(p(u, .6, .45)), 20);
+      rise($("s9c"), eo(p(u, .8, .45)), 20);
+      rise($("s9u"), eo(p(u, .95, .45)), 16);
+    }
+  });
+  if (!cursorShown) { $("cursor").style.display = "none"; $("ripple").style.display = "none"; }
+};
+
+window.ready = Promise.all([document.fonts.ready, document.fonts.load("900 80px Nunito"), document.fonts.load("800 40px Nunito")]).then(() => { renderAt(0); return DURATION; });
+</script>
+</body>
+</html>

@@ -27,6 +27,14 @@ Optional environment variables:
 
 Never commit your key. `.env` is in .gitignore.
 
+## Intro website (`site/`)
+A one-page site that presents SpeakWise to students and placement cells. With the local server running, open http://localhost:3000/site/. On Vercel it's served at `/site/`.
+
+- Plain HTML, CSS and a little JS, with no build step. It follows the system light/dark setting.
+- Links to the app come from `data-app` on the `<html>` tag (default `../`). If you host the site on its own domain, set it to the app's full URL.
+- Images in `site/assets` are real screenshots of the app in light and dark. After UI changes, run `npm run screenshots` to retake them (needs Edge or Chrome). It plays a generated speech-like sound into a fake microphone, so the audio scores in the shots are real.
+- Before launch, change `og:image` in `site/index.html` to a full URL (for example `https://your-domain/site/assets/og.png`), because link previews need an absolute address.
+
 ## Tests
 `npm test` runs the scoring, resume, rate-limit and API tests with Node's built-in test runner.
 
@@ -43,5 +51,6 @@ Never commit your key. `.env` is in .gitignore.
 | `js/coach.js`, `api/coach.js`, `api/_ratelimit.js` | AI client and server endpoint, rate limiter |
 | `dashboard.html`, `js/dashboard.js` | Placement cell dashboard (reads students' progress files in the browser) |
 | `sw.js`, `manifest.webmanifest`, `icons/` | Installable app and offline support (`npm run icons` regenerates the PNGs) |
+| `site/` | Intro website; `scripts/capture-screenshots.js` makes its images |
 
-See DESIGN_REVIEW.md for the design review, bug list and roadmap. `index.before-redesign.html` and `index.before-modules.html` are earlier single-file versions.
+See DESIGN_REVIEW.md for the design review, bug list and roadmap.
