@@ -56,7 +56,7 @@ async function gemini(system, text, maxOutputTokens) {
     generationConfig: { responseMimeType: "application/json", maxOutputTokens, temperature: 0.4 }
   });
   // Tries your chosen model first, then fallbacks if a model name no longer exists.
-  const models = [process.env.GEMINI_MODEL, "gemini-2.5-flash", "gemini-2.5-flash-lite"].filter(Boolean);
+  const models = [process.env.GEMINI_MODEL, "gemini-3.5-flash", "gemini-3.5-flash-lite", "gemini-2.5-flash", "gemini-2.5-flash-lite"].filter(Boolean);
   let j = null, status = 0;
   for (const m of models) {
     const r = await fetch("https://generativelanguage.googleapis.com/v1beta/models/" + m + ":generateContent", {

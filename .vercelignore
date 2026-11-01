@@ -1,0 +1,6 @@
+# Files not needed in Vercel cloud deployment (server.js is only for local dev)
+server.js
+tests/
+scripts/
+.env
+.env.example
