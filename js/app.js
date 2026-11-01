@@ -4,7 +4,7 @@ import { LABEL, MEASURED, LANGS, scoreSession, summarizeScores, compareSessions,
 import * as store from "./store.js";
 import { createMedia } from "./media.js";
 import { createWave } from "./wave.js";
-import { askCoach, NoServer } from "./coach.js";
+import { askCoach, NoServer, getApiKey, setApiKey } from "./coach.js";
 import { questionsFromResume } from "./resume.js";
 
 const $ = id => document.getElementById(id);
@@ -677,7 +677,14 @@ function homeStats() {
 
 /* ---------- Privacy, settings and install ---------- */
 
-$("privacy").onclick = () => $("dlg").showModal();
+$("privacy").onclick = () => {
+  if ($("gemini_key_input")) $("gemini_key_input").value = getApiKey();
+  $("dlg").showModal();
+};
+if ($("gemini_key_save")) $("gemini_key_save").onclick = () => {
+  setApiKey($("gemini_key_input").value);
+  toast("Gemini API key saved.");
+};
 $("cl").onclick = () => $("dlg").close();
 $("wipe").onclick = () => {
   if (!confirm("Delete all sessions, saved topics, resume questions, topic history and your placement-cell details from this browser? This can't be undone.")) return;

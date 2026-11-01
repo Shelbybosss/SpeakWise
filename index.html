@@ -187,6 +187,14 @@
  <li>If you press Rephrase my answer, or turn on AI follow-ups, your transcript text (never audio or video) is sent through this site’s server to Google’s Gemini API; the site does not store it. On Google’s free tier, Google may use submitted text to improve its products, so do not include private information.</li>
  <li>The progress file for your placement cell contains scores, dates and categories only, and is shared only if you send it.</li>
 </ul>
+<div class="callout" style="margin:1rem 0">
+ <h3>AI Coach Key (Google Gemini)</h3>
+ <p class="sub">To enable AI rephrasing and follow-ups, paste your free Gemini API key (from <a href="https://aistudio.google.com/" target="_blank" rel="noopener">Google AI Studio</a>):</p>
+ <div class="row" style="margin-top:0.5rem;gap:0.5rem">
+  <input type="password" id="gemini_key_input" placeholder="Paste Gemini API key" style="flex:1" aria-label="Gemini API Key">
+  <button type="button" id="gemini_key_save">Save Key</button>
+ </div>
+</div>
 <div class="row end"><button type="button" id="wipe" class="danger">Delete all my data</button><button type="button" id="cl">Done</button></div></dialog>
 
 <script defer src="/_vercel/insights/script.js"></script>

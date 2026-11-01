@@ -1,6 +1,6 @@
 // Offline support. Network first so updates show up straight away; the cache is used only when offline.
 // Bump VERSION when the file list changes.
-const VERSION = "speakwise-v4";
+const VERSION = "speakwise-v5";
 const SHELL = ["./", "index.html", "dashboard.html", "css/app.css", "css/tokens.css", "css/base.css", "manifest.webmanifest", "topics.json",
   "js/app.js", "js/scoring.js", "js/topics.js", "js/store.js", "js/media.js", "js/wave.js", "js/coach.js", "js/resume.js", "js/dashboard.js",
   "icons/icon.svg", "icons/icon-192.png", "icons/apple-touch-icon.png"];
