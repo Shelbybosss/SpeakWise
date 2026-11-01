@@ -7,7 +7,7 @@
   "engines": { "node": ">=18" },
   "scripts": {
     "build": "echo 'Static assets ready'",
-    "start": "node server.js",
+    "start": "node local-server.js",
     "test": "node --test",
     "icons": "node scripts/make-icons.js",
     "screenshots": "node scripts/capture-screenshots.js"
