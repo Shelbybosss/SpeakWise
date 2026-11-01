@@ -5,7 +5,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import handler from "./api/coach.js";
 
-const root = path.dirname(fileURLToPath(import.meta.url));
+const root = process.cwd() || path.dirname(fileURLToPath(import.meta.url));
 try {
   fs.readFileSync(path.join(root, ".env"), "utf8").split(/\r?\n/).forEach(l => {
     const m = l.match(/^\s*([A-Z_]+)\s*=\s*(.*?)\s*$/);
@@ -18,7 +18,7 @@ const types = { ".html": "text/html; charset=utf-8", ".js": "text/javascript; ch
 const PRIVATE = /^\/(server\.js|api\/|tests\/|scripts\/|node_modules\/|package(-lock)?\.json)/;
 const port = Number(process.env.PORT) || 3000;
 
-http.createServer((req, res) => {
+const server = http.createServer((req, res) => {
   if (req.url.startsWith("/api/coach")) {
     let b = "", size = 0;
     req.on("data", c => { size += c.length; if (size > 64 * 1024) { res.statusCode = 413; res.end("Too large"); req.destroy(); } else b += c; });
@@ -40,4 +40,8 @@ http.createServer((req, res) => {
   res.setHeader("content-type", types[path.extname(f)] || "application/octet-stream");
   res.setHeader("cache-control", "no-cache");
   fs.createReadStream(f).pipe(res);
-}).listen(port, () => console.log(`SpeakWise running at http://localhost:${port}`));
+});
+
+server.listen(port, () => console.log(`SpeakWise running at http://localhost:${port}`));
+
+export default server;
